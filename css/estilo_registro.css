@@ -224,10 +224,10 @@ body {
 }
 
 .user_registrado {
-    color: #bf1515;
+    color: #ff4949;
     position: relative;
-    bottom: 10px;
-    font-size: 9px;
+    top: 14px;
+    font-size: 13px;
     margin: 0;
 }
 
@@ -252,7 +252,88 @@ body {
     margin-top: 30px;
 }
 
+/*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
+/*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
+/*--------------------------------------------------------GERAL---------------------------------------------------------*/
+
 @media (max-width: 480px) {
+    body {
+        background: linear-gradient(#a32636, #691923);
+    }
+
+    .container {
+        top: 45%;
+        background: none;
+        box-shadow: none;
+        flex-wrap: wrap;
+    }
+
+    .left-login {
+        display: none;
+    }
+
+    .login-box {
+        height: 485px;
+    }
+
+    .titulo_celular {
+        display: unset;
+        color: white;
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .user_registrado {
+        font-size: 12px;
+        bottom: 0px;
+        top: 10px;
+    }
+}
+
+/*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
+/*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
+/*--------------------------------------------------------GERAL---------------------------------------------------------*/
+
+@media (max-width: 480px) {
+    body {
+        background: linear-gradient(#a32636, #691923);
+    }
+
+    .container {
+        top: 45%;
+        background: none;
+        box-shadow: none;
+        flex-wrap: wrap;
+    }
+
+    .left-login {
+        display: none;
+    }
+
+    .login-box {
+        height: 485px;
+    }
+
+    .titulo_celular {
+        display: unset;
+        color: white;
+        font-size: 20px;
+        margin: 0;
+        text-align: center;
+    }
+
+    .user_registrado {
+        font-size: 12px;
+        bottom: 0px;
+        top: 10px;
+    }
+}
+
+/*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
+/*--------------------------------------------481px — 768px: iPads, tablets----------------------------------------*/
+/*--------------------------------------------------------GERAL----------------------------------------------------------*/
+@media (max-width: 840px) and (min-width: 481px) {
     body {
         background: linear-gradient(#a32636, #691923);
     }

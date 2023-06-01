@@ -26,7 +26,7 @@ if (isset($_POST["indicar"])) {
     $ano = intval($_POST["ano"]);
     $disponibilidade = $_POST["disponibilidade"];
     $nacionalidade = $_POST["nacionalidade"];
-    
+
 
     filtro($client, $genero, $classificacao, $ano, $duracao, $disponibilidade, $nacionalidade);
 
@@ -62,7 +62,7 @@ if (isset($_GET["filme"])) {
 if (isset($_POST["like"])) {
     $id_filme = $_POST["like"];
     like_deslike($client, $id_filme, true);
-    header('location: ?filme='.$id_filme);
+    header('location: ?filme=' . $id_filme);
     die;
 }
 
@@ -70,14 +70,14 @@ if (isset($_POST["like"])) {
 if (isset($_POST["deslike"])) {
     $id_filme = $_POST["deslike"];
     like_deslike($client, $id_filme, false);
-    header('location: ?filme='.$id_filme);
+    header('location: ?filme=' . $id_filme);
     die;
 }
 
 if (isset($_POST["watchlist"])) {
     $id_filme = $_POST["watchlist"];
     watchlist($client, $id_filme);
-    header('location: ?filme='.$id_filme);
+    header('location: ?filme=' . $id_filme);
     die;
 }
 
@@ -100,9 +100,10 @@ if (isset($_POST["reset"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlickPicks</title>
     <link rel="shortcut icon" href="img/png_logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilo_sistema.css">
+    <link rel="stylesheet" href="css/estilo_sistema_old.css">
 </head>
 <datagrid></datagrid>
+
 <body>
     <!--------------------------------------------------MENU-------------------------------------------------->
     <header>
@@ -161,7 +162,7 @@ if (isset($_POST["reset"])) {
                                 <option value="16">16</option>
                                 <option value="18">18</option>
                             </select>
-
+                            
                             <p>Disponibilidade:</p>
                             <select name="disponibilidade" id="">
                                 <option value=""></option>
@@ -177,12 +178,7 @@ if (isset($_POST["reset"])) {
                                 <option value="Claro Vídeo">Claro Vídeo</option>
                                 <option value="Paramount+">Paramount+</option>
                                 <option value="Now">Now</option>
-                                
-                                
                             </select>
-
-                        
-
 
                         </div>
 
@@ -206,7 +202,7 @@ if (isset($_POST["reset"])) {
                                 <option value="106|130">2h</option>
                                 <option value="131|250">2h30+</option>
                             </select>
-
+                            
                             <p>Nacionalidade:</p>
                             <select name="nacionalidade" id="">
                                 <option value=""></option>

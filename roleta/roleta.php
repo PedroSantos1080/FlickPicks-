@@ -12,7 +12,8 @@ include('../banco_teste.php');
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="estilo_roleta.css" />
-  <title>Document</title>
+  <link rel="shortcut icon" href="img/png_logo.ico" type="image/x-icon">
+  <title>FlickPicks - Roleta</title>
   <style>
 
   </style>
