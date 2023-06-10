@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('config.php');
-include('banco_teste.php');
+include('banco.php');
 //print_r($_SESSION);
 
 
@@ -28,7 +28,7 @@ if (isset($_POST["indicar"])) {
     $nacionalidade = $_POST["nacionalidade"];
 
 
-    filtro($client, $genero, $classificacao, $ano, $duracao, $disponibilidade, $nacionalidade);
+    $nao_encontrado = filtro($client, $genero, $classificacao, $ano, $duracao, $disponibilidade, $nacionalidade);
 
     //var_dump($like);
 }
@@ -83,10 +83,7 @@ if (isset($_POST["watchlist"])) {
 
 if (isset($_POST["reset"])) {
     limparURL();
-
 }
-
-
 
 ?>
 
@@ -162,7 +159,7 @@ if (isset($_POST["reset"])) {
                                 <option value="16">16</option>
                                 <option value="18">18</option>
                             </select>
-                            
+
                             <p>Disponibilidade:</p>
                             <select name="disponibilidade" id="">
                                 <option value=""></option>
@@ -202,7 +199,7 @@ if (isset($_POST["reset"])) {
                                 <option value="106|130">2h</option>
                                 <option value="131|250">2h30+</option>
                             </select>
-                            
+
                             <p>Nacionalidade:</p>
                             <select name="nacionalidade" id="">
                                 <option value=""></option>

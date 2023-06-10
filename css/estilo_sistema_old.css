@@ -187,6 +187,7 @@ nav.active {
 }
 
 .tela_principal {
+    /*width: 506px; Outra opção de largura, fica melhor na responsividade.*/
     width: 580px;
     height: 540px;
     display: inline-block;
@@ -271,6 +272,7 @@ select {
     color: white;
     display: inline-block;
     border: none;
+    cursor: pointer;
 }
 
 .fim {
@@ -294,6 +296,7 @@ select {
     transition-delay: 100ms;
     background: #801515;
     color: #fff;
+    cursor: pointer;
 }
 
 /*----------------------------------------------------CORPO----------------------------------------------------*/
@@ -377,6 +380,13 @@ select {
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
 /*--------------------------------------------------------MENU----------------------------------------------------------*/
+
+@media (max-width: 360px) {
+    .view_filme {
+        width: 335px;
+    }
+}
+
 @media (max-width: 480px) {
 
     body {
@@ -386,7 +396,7 @@ select {
     header {
         background-color: #741D1D;
         width: 100%;
-        height: 65px;
+        height: 58px;
         padding: 10px;
         display: flex;
         position: fixed;

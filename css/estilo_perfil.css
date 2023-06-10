@@ -191,6 +191,42 @@ img {
 
 .image_perfil {
     width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background-image: url("../img/perfil.png");
+    background-size: 184px;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.image {
+    width: 184px;
+}
+
+.perfil {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center
+}
+
+.select-perfil {
+    border: none;
+    background: #741d1d;
+    color: white;
+    border-radius: 12px;
+    padding: 2px;
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 5px;
+    left: 0px;
 }
 
 .nome_user {
@@ -242,6 +278,15 @@ img {
     right: 10px;
 }
 
+.sem_whatchlist {
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    position: relative;
+    top: 32px;
+    left: 10px;
+}
+
 .card {
     width: 150px;
     /* Largura de cada card */
@@ -269,8 +314,8 @@ img {
     width: 121px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to right, rgb(0 0 0 / 93%), rgba(0, 0, 0, 0.211));
-    box-shadow: 20px 0px 20px 20px rgba(0, 0, 0, 0.211); 
+    background: linear-gradient(to right, rgb(0 0 0 / 64%), rgba(0, 0, 0, 0.211));
+    box-shadow: 20px 0px 20px 20px rgba(0, 0, 0, 0.211);
 }
 
 .arrow_next {
@@ -283,14 +328,22 @@ img {
     width: 121px;
     display: flex;
     align-items: center;
-    background: linear-gradient(to left, rgb(0 0 0 / 93%), rgba(0, 0, 0, 0.211));
+    background: linear-gradient(to left, rgb(0 0 0 / 64%), rgba(0, 0, 0, 0.211));
     box-shadow: 20px 0px 20px 20px rgba(0, 0, 0, 0.211);
     justify-content: flex-end;
+}
+
+
+.link {
+    position: relative;
+    cursor: pointer;
+    z-index: 999;
 }
 
 .img_posters {
     width: 150px;
     margin-left: 10px;
+    position: relative;
 }
 
 
@@ -299,11 +352,11 @@ img {
 /*--------------------------------------------------------MENU----------------------------------------------------------*/
 
 @media (max-width: 480px) {
-    
+
     header {
         background-color: #741D1D;
         width: 100%;
-        height: 65px;
+        height: 58px;
         padding: 10px;
         display: flex;
         position: fixed;
@@ -351,46 +404,97 @@ img {
     }
 
 
-/*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
-/*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
-/*--------------------------------------------------------CORPO---------------------------------------------------------*/
+    /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
+    /*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
+    /*--------------------------------------------------------CORPO---------------------------------------------------------*/
 
-.tela_principal {
-    align-items: center;
-    flex-wrap: wrap;
-    flex-basis: 100%;
-    flex-direction: column;
-    margin-top: 70px;
-}
+    .tela_principal {
+        align-items: center;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin-top: 70px;
+    }
 
-.image_perfil {
-    width: 150px;
-    margin-bottom: 10px;
-}
+    .image_perfil {
+        width: 150px;
+        height: 150px;
+        margin-bottom: 10px;
+    }
 
-.nome_user {
-    margin: 0 0 20px 0;
-    position: relative;
-    top: 18px;
-}
+    .image {
+        width: 150px;
+    }
 
-.view_filme {
-    flex-basis: 100%;
-    margin: 30px 0;
-}
+    .nome_user {
+        margin: 0 0 20px 0;
+        position: relative;
+        top: 18px;
+    }
 
-.title_wt {
-    margin: 27px 0;
-}
+    .view_filme {
+        flex-basis: 100%;
+        margin: 30px 0;
+    }
 
-.info_perfil h3 {
-    text-align: center;
-}
+    .title_wt {
+        margin: 27px 0;
+    }
 
+    .info_perfil h3 {
+        text-align: center;
+    }
+
+    .arrow_prev,
+    .arrow_next {
+        width: 60px;
+    }
 }
 
 
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------481px — 768px: iPads, tablets----------------------------------------*/
 /*--------------------------------------------------------GERAL----------------------------------------------------------*/
-@media (max-width: 840px) and (min-width: 481px) {}
+@media (max-width: 840px) and (min-width: 481px) {
+    .tela_principal {
+        align-items: center;
+        flex-wrap: wrap;
+        flex-basis: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .image_perfil {
+        width: 180px;
+        height: 180px;
+        margin-bottom: 10px;
+    }
+
+    .nome_user {
+        margin: 0 0 20px 0;
+        position: relative;
+        top: 18px;
+        font-size: 40px;
+    }
+
+    .view_filme {
+        flex-basis: 100%;
+        margin: 30px 0;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .title_wt {
+        margin: 27px 0;
+    }
+
+    .info_perfil {
+        margin: 0;
+    }
+
+    .info_perfil {
+        text-align: center;
+        font-size: 25px;
+    }
+
+}

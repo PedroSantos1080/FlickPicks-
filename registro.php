@@ -1,5 +1,5 @@
 <?php
-include('banco_teste.php');
+include('banco.php');
 ?>
 
 <!DOCTYPE html>

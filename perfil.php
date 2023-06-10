@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once('config.php');
-include('banco_teste.php');
+include('banco.php');
 
 if ((!isset($_SESSION['id']))) {
     header('Location: login.php');
@@ -15,7 +15,6 @@ $watchlist = pegar_watchlist($client);
 $like_deslike = exibir_like_deslike($client);
 $like = $like_deslike[0];
 $deslike = $like_deslike[1];
-
 
 ?>
 
@@ -57,42 +56,77 @@ $deslike = $like_deslike[1];
     <form action="" method="POST">
         <div class="container_corpo">
             <div class="tela_principal">
-                <img class="image_perfil" src="img/perfil.png" alt="">
-                <h1 class="nome_user"><?php exibir_user($client);?></h1>
+                <div class="perfil">
+                    <div class="image_perfil">
+                        <img class="image" id="imagem-preview" src="" alt="">
+                    </div>
+                    <select class="select-perfil" id="imagem-selecionada" onchange="selecionarImagem()">
+                        <option value=""></option>
+                        <option value="img/red.png">Red</option>
+                        <option value="img/blue.png">Blue</option>
+                        <option value="img/green.png">Green</option>
+                    </select>
+                </div>
+
+                <h1 class="nome_user">
+                    <?php exibir_user($client); ?>
+                </h1>
             </div>
 
             <div class="view_filme">
                 <div class="info_perfil">
-                    <h3><?php exibir_recomendacoes($client);?></h3>
+                    <h3>
+                        <?php exibir_recomendacoes($client); ?>
+                    </h3>
                     <p>recomendações</p>
                 </div>
 
                 <div class="info_perfil">
-                    <h3><?php echo $like; ?></h3>
+                    <h3>
+                        <?php echo $like; ?>
+                    </h3>
                     <p>curtidos</p>
                 </div>
 
                 <div class="info_perfil">
-                    <h3><?php echo $deslike; ?></h3>
+                    <h3>
+                        <?php echo $deslike; ?>
+                    </h3>
                     <p>não curtido</p>
                 </div>
 
             </div>
 
             <div class="watchlist">
+
                 <h1 class="title_wt">Watchlist</h1>
+
+
                 <div class="filmes_wt">
-                    <div class="carousel">
+                    <?php if ($watchlist): ?>
+                        <div class="carousel">
+
+                            <div class="carousel-container">
+                                <?php foreach ($watchlist as $filme): ?>
+                                    <a class="link" href="#"
+                                        onclick="window.location.href='sistema.php?filme=<?php echo $filme->_id; ?>'">
+                                        <img class="img_posters" src="<?php echo $filme->poster; ?>" style="width: 150px;"
+                                            alt="">
+                                    </a>
+                                <?php endforeach; ?>>
+
+                            </div>
+                            <div class="carousel-arrows">
+                                <div class="arrow_prev arrow prev">&#8249;</div>
+                                <div class="arrow_next arrow next">&#8250;</div>
+                            </div>
+                        </div>
+
+                    <?php else: ?>
                         <div class="carousel-container">
-                            <?php foreach ($watchlist as $filme): ?>
-                                <img class="img_posters" src="<?php echo $filme->poster; ?>" style="width: 150px;" alt="">
-                            <?php endforeach; ?>
+                            <h1 class="sem_whatchlist">Não há nada para ver aqui ainda /: <br> Adicione alguns filmes!</h1>
                         </div>
-                        <div class="carousel-arrows">
-                            <div class="arrow_prev arrow prev">&#8249;</div>
-                            <div class="arrow_next arrow next">&#8250;</div>
-                        </div>
-                    </div>
+                    <?php endif ?>
 
                 </div>
 

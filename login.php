@@ -1,5 +1,5 @@
 <?php
-include('banco_teste.php');
+include('banco.php');
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +18,7 @@ include('banco_teste.php');
 <body>
 
     <div class="container">
-        <h1 class="titulo_celular">Faça login para continuar em nosso site</h1>
+        <h1 class="titulo_celular">Faça login para continuar no FlickPicks!</h1>
 
         <div class="left-login">
             <h1 class="titulo">Faça login para continuar no FlickPicks!</h1>
