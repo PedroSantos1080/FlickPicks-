@@ -29,4 +29,4 @@ function selecionarImagem() {
     var select = document.getElementById("imagem-selecionada");
     var imagemSelecionada = select.options[select.selectedIndex].value;
     document.getElementById("imagem-preview").src = imagemSelecionada;
-}
+} 

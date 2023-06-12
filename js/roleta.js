@@ -11,8 +11,10 @@ function exibirPopUp() {
   console.log("deu certo");
 
   setTimeout(function () {
-    var container = document.getElementById("container").style.display = "none";
-    var title_roleta = document.querySelector(".title_roleta").style.display = "none";
+    container = document.getElementById("container").style.display = "none";
+    title_roleta = document.querySelector(".title_roleta").style.display = "none";
+    spin = document.querySelector(".spinBtn").style.display = "none";
+    
     var imagens = [
       "img/poster1.jpg",
       "img/poster2.jpg",

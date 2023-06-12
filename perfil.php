@@ -105,21 +105,14 @@ $deslike = $like_deslike[1];
                 <div class="filmes_wt">
                     <?php if ($watchlist): ?>
                         <div class="carousel">
-
+                            <div class="arrow_prev arrow prev">&#8249;</div>
                             <div class="carousel-container">
                                 <?php foreach ($watchlist as $filme): ?>
-                                    <a class="link" href="#"
-                                        onclick="window.location.href='sistema.php?filme=<?php echo $filme->_id; ?>'">
-                                        <img class="img_posters" src="<?php echo $filme->poster; ?>" style="width: 150px;"
-                                            alt="">
-                                    </a>
-                                <?php endforeach; ?>>
-
+                                    <img onclick="imagens_php()" class="img_posters" src="<?php echo $filme->poster; ?>"
+                                        style="width: 150px;" alt="">
+                                <?php endforeach; ?>  
                             </div>
-                            <div class="carousel-arrows">
-                                <div class="arrow_prev arrow prev">&#8249;</div>
-                                <div class="arrow_next arrow next">&#8250;</div>
-                            </div>
+                            <div class="arrow_next arrow next">&#8250;</div>
                         </div>
 
                     <?php else: ?>
@@ -140,6 +133,9 @@ $deslike = $like_deslike[1];
     </form>
 
     <script>
+        function imagens_php() {
+            window.location.href = 'sistema.php?filme=<?php echo $filme->_id; ?>'
+        }
         const prevArrow = document.querySelector('.arrow.prev');
         const nextArrow = document.querySelector('.arrow.next');
 
