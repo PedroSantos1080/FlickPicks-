@@ -209,7 +209,7 @@ function like_deslike($client, $id_filme, $like)
 
     if ($filme) {
         //O registro já existe.
-        $collection->updateOne(
+        $collection->deleteOne(
             array("id_usuario" => $id_user, "id_filme" => $id_filme_obj),
             // Critérios para encontrar o documento
             array('$set' => array('like' => $like, 'deslike' => !$like)) // Atualizações a serem aplicadas

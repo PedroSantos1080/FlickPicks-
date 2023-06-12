@@ -99,18 +99,16 @@ $deslike = $like_deslike[1];
 
             <div class="watchlist">
 
-                <h1 class="title_wt">Watchlist</h1>
-
-
+                <h1 class="title_wt">Watchlist <span class="Dica">? <div class="DicaTexto">Para adicionar filmes a sua Watchlist, use nosso recomendador de filmes na tela principal! Para remover, basta clicar no filme desejado, que logo em seguida você sera redirecionado para o filme selecionado.</div></span> </h1>
                 <div class="filmes_wt">
                     <?php if ($watchlist): ?>
                         <div class="carousel">
                             <div class="arrow_prev arrow prev">&#8249;</div>
                             <div class="carousel-container">
                                 <?php foreach ($watchlist as $filme): ?>
-                                    <img onclick="imagens_php()" class="img_posters" src="<?php echo $filme->poster; ?>"
-                                        style="width: 150px;" alt="">
-                                <?php endforeach; ?>  
+                                    <img class="img_posters" src="<?php echo $filme->poster; ?>" style="width: 150px;" alt=""
+                                        onclick="redirectToFilme('<?php echo $filme->_id; ?>')">
+                                <?php endforeach; ?>
                             </div>
                             <div class="arrow_next arrow next">&#8250;</div>
                         </div>
@@ -133,8 +131,8 @@ $deslike = $like_deslike[1];
     </form>
 
     <script>
-        function imagens_php() {
-            window.location.href = 'sistema.php?filme=<?php echo $filme->_id; ?>'
+        function redirectToFilme(filmeId) {
+            window.location.href = 'sistema.php?filme=' + filmeId;
         }
         const prevArrow = document.querySelector('.arrow.prev');
         const nextArrow = document.querySelector('.arrow.next');
