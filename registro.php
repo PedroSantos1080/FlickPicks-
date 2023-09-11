@@ -61,7 +61,6 @@ include('banco.php');
                 <a class="Slogin_Scadastro" href="login.php">Já tem uma conta? Entre aqui!</a>
             </form>
         </div>
-
     </div>
 
 </body>

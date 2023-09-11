@@ -2,22 +2,18 @@
 session_start();
 include_once('config.php');
 include('banco.php');
-//print_r($_SESSION);
-
 
 if ((!isset($_SESSION['id']))) {
     header('Location: login.php');
     return;
 }
+
 $logado = $_SESSION['id'];
 $filme_escolhido = null;
 $nao_encontrado = false;
 $filme_like = null;
 $filme_deslike = null;
 $filme_watchlist = null;
-
-
-
 
 if (isset($_POST["indicar"])) {
     $genero = $_POST["genero"];
@@ -26,16 +22,11 @@ if (isset($_POST["indicar"])) {
     $ano = intval($_POST["ano"]);
     $disponibilidade = $_POST["disponibilidade"];
     $nacionalidade = $_POST["nacionalidade"];
-
-
     $nao_encontrado = filtro($client, $genero, $classificacao, $ano, $duracao, $disponibilidade, $nacionalidade);
-
-    //var_dump($like);
 }
 
 if (isset($_GET["filme"])) {
     $id_filme = $_GET["filme"];
-
     $resultado = filme_info($client, $id_filme);
     if (count($resultado) > 0) {
         $filme_escolhido = $resultado[0];
@@ -53,11 +44,7 @@ if (isset($_GET["filme"])) {
     } else {
         $nao_encontrado = true;
     }
-
-
-    //var_dump($like);
 }
-
 
 if (isset($_POST["like"])) {
     $id_filme = $_POST["like"];
@@ -65,7 +52,6 @@ if (isset($_POST["like"])) {
     header('location: ?filme=' . $id_filme);
     die;
 }
-
 
 if (isset($_POST["deslike"])) {
     $id_filme = $_POST["deslike"];
@@ -84,9 +70,7 @@ if (isset($_POST["watchlist"])) {
 if (isset($_POST["reset"])) {
     limparURL();
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -97,7 +81,7 @@ if (isset($_POST["reset"])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlickPicks</title>
     <link rel="shortcut icon" href="img/png_logo.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/estilo_sistema_old.css">
+    <link rel="stylesheet" href="css/estilo_sistema.css">
 </head>
 <datagrid></datagrid>
 
@@ -270,7 +254,7 @@ if (isset($_POST["reset"])) {
                                     class="deslike" <?= $filme_deslike ? "style='background: red;'" : ""; ?>><img
                                         src="img/deslike.png" alt="deslike"></button>
                                 <button type="submit" name="watchlist" value="<?php echo $filme_escolhido->_id; ?>"
-                                    class="watchlist" <?= $filme_watchlist ? "style='background: blue;'" : ""; ?>>Watchlist</button>
+                                    class="watchlist" <?= $filme_watchlist ? "style='background: #2828fd;'" : ""; ?>>Watchlist</button>
                             </form>
 
                         </div>
@@ -288,10 +272,8 @@ if (isset($_POST["reset"])) {
                     </div>
                 <?php endif ?>
             </div>
-
         </div>
     </form>
-
 
 </body>
 

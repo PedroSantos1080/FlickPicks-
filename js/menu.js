@@ -3,7 +3,6 @@ const menuRotate = document.querySelector('#menu')
 const nav = document.querySelector('nav');
 
 menuToggle.addEventListener('click', function () {
-
     if (!nav.classList.contains('active')) {
         //não tem active
         nav.classList.add('active');
@@ -22,8 +21,6 @@ menuToggle.addEventListener('click', function () {
         }, 299);
     }
 });
-
-
 
 function selecionarImagem() {
     var select = document.getElementById("imagem-selecionada");

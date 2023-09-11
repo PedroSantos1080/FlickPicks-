@@ -96,10 +96,8 @@ $deslike = $like_deslike[1];
                 </div>
 
             </div>
-
             <div class="watchlist">
-
-                <h1 class="title_wt">Watchlist <span class="Dica">? <div class="DicaTexto">Para adicionar filmes a sua Watchlist, use nosso recomendador de filmes na tela principal! Para remover, basta clicar no filme desejado, que logo em seguida você sera redirecionado para o filme selecionado.</div></span> </h1>
+                <h1 class="title_wt">Watchlist <span class="Dica">? <div class="DicaTexto">Para adicionar filmes a sua Watchlist, use nosso recomendador de filmes na tela principal! Para remover, basta clicar no filme desejado, que logo em seguida você sera redirecionado para o filme selecionado.</div></span></h1>
                 <div class="filmes_wt">
                     <?php if ($watchlist): ?>
                         <div class="carousel">
@@ -118,16 +116,9 @@ $deslike = $like_deslike[1];
                             <h1 class="sem_whatchlist">Não há nada para ver aqui ainda /: <br> Adicione alguns filmes!</h1>
                         </div>
                     <?php endif ?>
-
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </form>
 
     <script>
@@ -141,9 +132,6 @@ $deslike = $like_deslike[1];
         nextArrow.addEventListener('click', next);
 
         // Resto do código JavaScript do carousel anterior...
-
-
-
         const carousel = document.querySelector('.carousel');
         const container = document.querySelector('.carousel-container');
 
@@ -173,9 +161,6 @@ $deslike = $like_deslike[1];
                 }
             }
         });
-
     </script>
-
 </body>
-
 </html>

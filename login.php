@@ -16,17 +16,12 @@ include('banco.php');
 </head>
 
 <body>
-
     <div class="container">
         <h1 class="titulo_celular">Faça login para continuar no FlickPicks!</h1>
-
         <div class="left-login">
             <h1 class="titulo">Faça login para continuar no FlickPicks!</h1>
             <img style="width: 70%;" src="img/assistindo.png" alt="">
         </div>
-
-        <!--Card Login https://cinepop.com.br/wp-content/uploads/2022/05/Tudo-em-Todo-o-Lugar-ao-Mesmo-Tempo-scaled.jpg>-->
-
         <div class="login-box">
             <h2>Login</h2>
             <form action="" method='POST'>
@@ -53,9 +48,7 @@ include('banco.php');
                 <a class="Slogin_Scadastro" href="registro.php">Cadastre-se aqui!</a>
             </form>
         </div>
-
     </div>
-
 </body>
 
 </html>

@@ -4,17 +4,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*border: 1px solid red;*/
 }
 
 body {
     width: 100%;
     height: 100%;
-
     background-image: url('../img/background_site_preto.jpg');
     font-family: 'Inter', sans-serif;
 }
-
 
 /*----------------------------------------------------MENU----------------------------------------------------*/
 
@@ -24,7 +21,9 @@ header {
     height: 65px;
     padding: 10px;
     display: flex;
-
+    position: fixed;
+    z-index: 999;
+    top: 0;
 }
 
 .container_menu {
@@ -73,7 +72,6 @@ header {
     width: 38px;
     margin-right: 20px;
 }
-
 
 .botao_menu {
     background: transparent;
@@ -171,20 +169,20 @@ nav.active {
     display: block;
 }
 
-
 /*----------------------------------------------------CORPO----------------------------------------------------*/
 /*------------------------------------------------TELA PRINCIPAL-----------------------------------------------*/
 
 .container_corpo {
     width: 100%;
-    height: 110vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
+    margin-top: 70px;
 }
 
 .tela_principal {
+    /*width: 506px; Outra opção de largura, fica melhor na responsividade.*/
     width: 580px;
     height: 540px;
     display: inline-block;
@@ -196,14 +194,12 @@ nav.active {
     background-color: rgb(0, 0, 0);
 }
 
-
-
 .topo {
     margin: 30px 0 60px;
 }
 
 .topo h1 {
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 600;
     color: white;
 }
@@ -233,13 +229,10 @@ span {
 .meio {
     color: white;
     font-weight: 400;
-    position: absolute;
-    top: 98px
 }
 
 .meio h3 {
     font-weight: 600;
-    margin-bottom: 39px;
 }
 
 .filtros {
@@ -272,13 +265,13 @@ select {
     color: white;
     display: inline-block;
     border: none;
-    margin-bottom: 15px;
+    cursor: pointer;
 }
 
 .fim {
     position: absolute;
     bottom: 0;
-    margin-bottom: 35px;
+    margin-bottom: 30px;
 }
 
 .fim button {
@@ -296,6 +289,7 @@ select {
     transition-delay: 100ms;
     background: #801515;
     color: #fff;
+    cursor: pointer;
 }
 
 /*----------------------------------------------------CORPO----------------------------------------------------*/
@@ -322,6 +316,10 @@ select {
     width: 150px;
 }
 
+.info_filme {
+    margin-bottom: 30px;
+}
+
 .info_principal h3 {
     font-size: 20px;
     margin: 8px 0;
@@ -337,7 +335,6 @@ select {
     text-align: left;
     padding: 0 30px;
 }
-
 
 .info_disponibilidade {
     font-size: 16px;
@@ -376,6 +373,13 @@ select {
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
 /*--------------------------------------------------------MENU----------------------------------------------------------*/
+
+@media (max-width: 360px) {
+    .view_filme {
+        width: 335px;
+    }
+}
+
 @media (max-width: 480px) {
 
     body {
@@ -385,19 +389,12 @@ select {
     header {
         background-color: #741D1D;
         width: 100%;
-        height: 65px;
+        height: 58px;
         padding: 10px;
         display: flex;
+        position: fixed;
+        z-index: 999;
     }
-
-    /*
-        .container_menu {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    */
 
     .logo {
         margin-left: 2px;
@@ -439,9 +436,9 @@ select {
 
     .tela_principal {
         width: 334px;
-        height: 600px;
+        height: 712px;
         padding: 0 25px;
-        margin-top: 90px;
+        margin-top: 35px;
     }
 
     .container_corpo {
@@ -546,7 +543,7 @@ select {
     }
 
 /*----------------------------------------------------CORPO----------------------------------------------------*/
-/*------------------------------------------------TELA VISUALIZAÇÃO---------------------------------------------*/
+/*------------------------------------------------TELA VISUALIZAÇÃO--------------------------------------------*/
 
     .view_filme {
         width: 400px;
@@ -557,7 +554,6 @@ select {
         background-color: rgb(0, 0, 0);*/
         color: white;
         text-align: center;
-        display: none;
     }
 
     .info_filme {
@@ -579,7 +575,6 @@ select {
     }
 }
 
-
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------481px — 768px: iPads, tablets----------------------------------------*/
 /*--------------------------------------------------------MENU----------------------------------------------------------*/
@@ -589,15 +584,11 @@ select {
         overflow: scroll;
     }
 
-
-    /*
-        .container_menu {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+    header {
+        position: fixed;
+        z-index: 999;
+        top: 0;
     }
-    */
 
     .logo {
         margin-left: 2px;
@@ -630,18 +621,15 @@ select {
         margin-right: 2px;
     }
 
-
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------481px — 768px: iPads, tablets----------------------------------------*/
 /*--------------------------------------------------------CORPO---------------------------------------------------------*/
 
-
-
     .tela_principal {
         width: 650px;
-        height: 480px;
+        height: 505px;
+        margin-top: 55px;
     }
-
 
     .container_corpo {
         display: flex;
@@ -658,7 +646,6 @@ select {
     .topo h1 {
         font-size: 22px;
         text-align: center;
-
     }
 
     .botoes {
@@ -685,7 +672,6 @@ select {
     .meio {
         color: white;
         font-weight: 400;
-        width: 85%;
         text-align: center;
     }
 
@@ -761,8 +747,6 @@ select {
         height: 615px;
         padding: 15px;
         border-radius: 15px;
-        /*background: linear-gradient(#D64B4B99, #6b0b0b7a);
-        background-color: rgb(0, 0, 0);*/
         color: white;
         text-align: center;
         margin-top: 40px;
@@ -807,7 +791,6 @@ select {
         margin: 26px 0;
     }
 
-
     .info_filme {
         width: auto;
         height: 600px;
@@ -833,5 +816,23 @@ select {
 
     .button_limpar {
         display: none;
+    }
+}
+
+/*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
+/*-----------------------------------------769px — 1024px: telas pequenas, laptops.-------------------------------------*/
+/*--------------------------------------------------------CORPO---------------------------------------------------------*/
+@media (max-width: 1360px) and (min-width: 841px) {
+    .tela_principal {
+        height: 500px;
+    }
+
+    .view_filme {
+        width: 615px;
+        height: 500px;
+    }
+
+    .info_sinopse p {
+        font-size: 14px;
     }
 }

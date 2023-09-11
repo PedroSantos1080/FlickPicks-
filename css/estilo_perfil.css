@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
 
 body {
@@ -15,9 +14,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-
 /*----------------------------------------------------MENU----------------------------------------------------*/
-
 
 .container_menu {
     width: 100%;
@@ -66,14 +63,12 @@ header {
 .img_perfil {
     width: 38px;
     margin-right: 20px;
-
 }
 
 .img_menu {
     width: 38px;
     margin-right: 20px;
 }
-
 
 .botao_menu {
     background: transparent;
@@ -202,8 +197,6 @@ img {
     justify-content: center;
     align-items: center;
 }
-
-
 
 .image {
     width: 184px;
@@ -399,7 +392,6 @@ img {
     cursor: pointer;
 }
 
-
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
 /*--------------------------------------------------------MENU----------------------------------------------------------*/
@@ -415,15 +407,6 @@ img {
         position: fixed;
         z-index: 999;
     }
-
-    /*
-        .container_menu {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-    */
 
     .logo {
         margin-left: 2px;
@@ -455,7 +438,6 @@ img {
         width: 30px;
         margin-right: 2px;
     }
-
 
     /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
     /*--------------------------------------------320px — 480px: dispositivos móveis----------------------------------------*/
@@ -503,7 +485,6 @@ img {
         width: 60px;
     }
 }
-
 
 /*----------------------------------------------------RESPONSIVIDADE----------------------------------------------------*/
 /*--------------------------------------------481px — 768px: iPads, tablets----------------------------------------*/
