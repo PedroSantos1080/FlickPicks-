@@ -4,7 +4,7 @@ include_once('config.php');
 include('banco.php');
 
 if ((!isset($_SESSION['id']))) {
-    header('Location: login.php');
+    header('Location: index.php');
     return;
 }
 

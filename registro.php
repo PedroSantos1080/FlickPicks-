@@ -58,7 +58,7 @@ include('banco.php');
                         <input class="btn_enviar" type="submit" value="Registrar" name="entrar">
                     </a>
                 </div>
-                <a class="Slogin_Scadastro" href="login.php">Já tem uma conta? Entre aqui!</a>
+                <a class="Slogin_Scadastro" href="index.php">Já tem uma conta? Entre aqui!</a>
             </form>
         </div>
     </div>
