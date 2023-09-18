@@ -23,6 +23,19 @@ Depois de todos os avanços tecnológicos experimentados pela indústria cinemat
 ![tela_roleta2](https://github.com/PedroSantos1080/FlickPicks-/assets/126338867/a3ece8ee-6af7-43ab-9620-849a9b38fde5)
 ![tela_roelta](https://github.com/PedroSantos1080/FlickPicks-/assets/126338867/e6d5fac5-028f-4244-afa0-7f9c29db28cf)
 
+## Authors
+
+### Front End:
+
+- [@Guilherme Gimenes](https://www.instagram.com/gui.dgimenes/)
+- [@Ana Elisa](https://www.instagram.com/melon_barretto/)
+
+
+### Back End:
+
+- [@Pedro Henrique](https://www.instagram.com/pedro__msantos/)
+- [@João Pedro](https://www.instagram.com/jp_dias15/)
+
 
 
 
