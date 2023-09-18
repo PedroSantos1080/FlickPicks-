@@ -24,7 +24,8 @@ include('../banco.php');
   <!--------------------------------------------------MENU-------------------------------------------------->
   <header>
     <div class="container_menu">
-      <div class="logo"><img src="img/png_logo.png" alt="">
+      <div class="logo">
+        <a href="../sistema.php"><img src="img/png_logo.png" alt=""></a>
         <h1 class="title_rec">FLICKPICKS</h1>
       </div>
       <div class="social" id="social">

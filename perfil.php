@@ -10,11 +10,11 @@ if ((!isset($_SESSION['id']))) {
 
 $logado = $_SESSION['id'];
 
-$watchlist = pegar_watchlist($client);
+$watchlist = pegar_watchlist($client); //Obtém a lista de filmes na watchlist do usuário.
+$like_deslike = exibir_like_deslike($client); //Obtém o total de filmes "like" e "deslike" do usuário.
+$like = $like_deslike[0]; //Extrai o total de filmes "like" do array.
+$deslike = $like_deslike[1]; //Extrai o total de filmes "deslike" do array.
 
-$like_deslike = exibir_like_deslike($client);
-$like = $like_deslike[0];
-$deslike = $like_deslike[1];
 
 ?>
 
@@ -34,7 +34,8 @@ $deslike = $like_deslike[1];
     <!--------------------------------------------------MENU-------------------------------------------------->
     <header>
         <div class="container_menu">
-            <div class="logo"><img src="img/png_logo.png" alt="">
+            <div class="logo">
+                <a href="sistema.php"><img src="img/png_logo.png" alt=""></a>
                 <h1 class="title_rec">FLICKPICKS</h1>
             </div>
             <div class="social" id="social">

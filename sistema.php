@@ -1,34 +1,41 @@
 <?php
-session_start();
-include_once('config.php');
-include('banco.php');
+session_start(); //Inicia a sessão.
+include_once('config.php'); //Inclui o arquivo de configuração.
+include('banco.php'); //Inclui o arquivo com funções relacionadas ao banco de dados.
 
+//Verifica se o usuário não está logado, redireciona para a página de login se não estiver.
 if ((!isset($_SESSION['id']))) {
     header('Location: index.php');
     return;
 }
 
-$logado = $_SESSION['id'];
-$filme_escolhido = null;
-$nao_encontrado = false;
-$filme_like = null;
-$filme_deslike = null;
-$filme_watchlist = null;
+$logado = $_SESSION['id']; //Obtém o ID do usuário logado.
+$filme_escolhido = null; //Inicializa a variável que armazenará informações sobre o filme escolhido.
+$nao_encontrado = false; //Inicializa a variável para indicar se um filme não foi encontrado.
+$filme_like = null; //Inicializa a variável para indicar se o usuário curtiu o filme.
+$filme_deslike = null; //Inicializa a variável para indicar se o usuário descurtiu o filme.
+$filme_watchlist = null; //Inicializa a variável para indicar se o filme está na watchlist do usuário.
 
+//Verifica se o formulário de indicação de filme foi enviado.
 if (isset($_POST["indicar"])) {
+    // Obtém os parâmetros do formulário.
     $genero = $_POST["genero"];
     $classificacao = $_POST["classificacao"];
     $duracao = $_POST["duracao"];
     $ano = intval($_POST["ano"]);
     $disponibilidade = $_POST["disponibilidade"];
     $nacionalidade = $_POST["nacionalidade"];
+
+    //Chama a função "filtro" para buscar um filme com base nos parâmetros.
     $nao_encontrado = filtro($client, $genero, $classificacao, $ano, $duracao, $disponibilidade, $nacionalidade);
 }
 
+//Verifica se um filme foi selecionado na página.
 if (isset($_GET["filme"])) {
     $id_filme = $_GET["filme"];
     $resultado = filme_info($client, $id_filme);
     if (count($resultado) > 0) {
+        //Se um filme com o ID especificado foi encontrado, armazena informações sobre ele.
         $filme_escolhido = $resultado[0];
         $like = $resultado[1];
         if ($like != null) {
@@ -40,37 +47,42 @@ if (isset($_GET["filme"])) {
         if ($watchlist != null) {
             $filme_watchlist = true;
         }
-
     } else {
+        //Se o filme não foi encontrado, define a variável "nao_encontrado" como verdadeira.
         $nao_encontrado = true;
     }
 }
 
+// Verifica se o usuário curtiu um filme.
 if (isset($_POST["like"])) {
     $id_filme = $_POST["like"];
-    like_deslike($client, $id_filme, true);
-    header('location: ?filme=' . $id_filme);
+    like_deslike($client, $id_filme, true); //Chama a função para registrar o "like" no filme.
+    header('location: ?filme=' . $id_filme); //Redireciona de volta para a página do filme.
     die;
 }
 
+//Verifica se o usuário descurtiu um filme.
 if (isset($_POST["deslike"])) {
     $id_filme = $_POST["deslike"];
-    like_deslike($client, $id_filme, false);
-    header('location: ?filme=' . $id_filme);
+    like_deslike($client, $id_filme, false); //Chama a função para registrar o "deslike" no filme.
+    header('location: ?filme=' . $id_filme); //Redireciona de volta para a página do filme.
     die;
 }
 
+//Verifica se o usuário adicionou ou removeu um filme da watchlist.
 if (isset($_POST["watchlist"])) {
     $id_filme = $_POST["watchlist"];
-    watchlist($client, $id_filme);
-    header('location: ?filme=' . $id_filme);
+    watchlist($client, $id_filme); //Chama a função para gerenciar a watchlist do usuário.
+    header('location: ?filme=' . $id_filme); //Redireciona de volta para a página do filme.
     die;
 }
 
+//Verifica se o usuário clicou em "reset" para limpar a URL.
 if (isset($_POST["reset"])) {
-    limparURL();
+    limparURL(); //Chama a função para limpar a URL.
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -89,7 +101,8 @@ if (isset($_POST["reset"])) {
     <!--------------------------------------------------MENU-------------------------------------------------->
     <header>
         <div class="container_menu">
-            <div class="logo"><img src="img/png_logo.png" alt="">
+            <div class="logo">
+                <a href="sistema.php"><img src="img/png_logo.png" alt=""></a>
                 <h1 class="title_rec">FLICKPICKS</h1>
             </div>
             <div class="social" id="social">

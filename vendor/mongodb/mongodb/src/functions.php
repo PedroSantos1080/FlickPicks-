@@ -471,21 +471,21 @@ function extract_read_preference_from_options(array $options): ?ReadPreference
  * @internal
  * @return Server
  */
-function select_server(Manager $manager, array $options): Server
-{
-    $session = extract_session_from_options($options);
-    if ($session instanceof Session && $session->getServer() !== null) {
-        return $session->getServer();
-    }
+    function select_server(Manager $manager, array $options): Server
+    {
+        $session = extract_session_from_options($options);
+        if ($session instanceof Session && $session->getServer() !== null) {
+            return $session->getServer();
+        }
 
-    $readPreference = extract_read_preference_from_options($options);
-    if (! $readPreference instanceof ReadPreference) {
-        // TODO: PHPLIB-476: Read transaction read preference once PHPC-1439 is implemented
-        $readPreference = new ReadPreference(ReadPreference::RP_PRIMARY);
-    }
+        $readPreference = extract_read_preference_from_options($options);
+        if (! $readPreference instanceof ReadPreference) {
+            // TODO: PHPLIB-476: Read transaction read preference once PHPC-1439 is implemented
+            $readPreference = new ReadPreference(ReadPreference::RP_PRIMARY);
+        }
 
-    return $manager->selectServer($readPreference);
-}
+        return $manager->selectServer($readPreference);
+    }
 
 /**
  * Performs server selection for an aggregate operation with a write stage. The
